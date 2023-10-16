@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand">Resultados de la simulación</a>
+        </div>
+    </nav>
+    <!--Resultados-->
+    <div class="container mt-4">
+        <div class="row mt-4" >
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Detalles del Pedido</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">Nombre del Artículo: {{ nombre_articulo }}</li>
+                            <li class="list-group-item">Código del Artículo: {{ codigo_articulo }}</li>
+                            <li class="list-group-item">Proveedor: {{ proveedor }}</li>
+                            <li class="list-group-item">Cantidad de Unidades: {{ cantidad_unidades }}</li>
+                            <li class="list-group-item">Costo Unitario en USD: ${{ costo_unitario_usd }}</li>
+                            <li class="list-group-item">Costo de Envío en USD: ${{ costo_envio_usd }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Resultados</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">Total del Pedido en CLP: ${{ total_pedido_clp }}</li>
+                            <li class="list-group-item">Costo de Envío en CLP: ${{ costo_envio_clp }}</li>
+                            <li class="list-group-item">Impuesto de Aduana (6% del valor CIF) en CLP: ${{ impuesto_aduana_clp }}</li>
+                            <li class="list-group-item">IVA (19% del valor CIF) en CLP: ${{ iva_clp }}</li>
+                            <li class="list-group-item">Costo Total de la Compra en CLP: ${{ costo_total_clp }}</li>
+                            <li class="list-group-item">Costo Total de la Compra en USD: ${{ costo_total_usd }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <a href="{% url 'simulacion_importacion' %}" class="btn btn-success">Realizar otro cálculo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
